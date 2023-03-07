@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import Home from './views/Home';
 import Realtors from './views/Realtors';
-import RealtorsMessageDetails from './components/RealtorMessageDetails';
-import RealtorsMessageDetailsEmpty from './components/RealtorsMessageDetailsEmpty';
+import RealtorMessageDetails from './components/RealtorMessageDetails';
+import RealtorMessageDetailsEmpty from './components/RealtorMessageDetailsEmpty';
 import NotFound from './views/NotFound';
-import RealtorsMessageList from './components/RealtorsMessageList';
 
 const Router = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -30,10 +29,10 @@ const Router = () => {
       <Routes>
         <Route index element={<Home />} />
         <Route path="/realtors/:realtorId?" element={<Realtors isMobile={isMobile} />}>
-          <Route index element={<RealtorsMessageDetailsEmpty />}></Route>
+          <Route index element={<RealtorMessageDetailsEmpty />}></Route>
           <Route
             path="message/:messageId?"
-            element={<RealtorsMessageDetails isMobile={isMobile} />}
+            element={<RealtorMessageDetails isMobile={isMobile} />}
           ></Route>
         </Route>
         <Route path="*" element={<NotFound />} />

@@ -11,7 +11,7 @@ import useUpdateRealtorMessage from '../hooks/useUpdateRealtorMessage.hook';
 
 dayjs.extend(relativeTime);
 
-function RealtorsMessage(props: { message: IRealtorMessage; isLoading: boolean }) {
+function RealtorMessage(props: { message: IRealtorMessage; isLoading: boolean }) {
   const { realtorId, messageId } = useParams();
   const navigate = useNavigate();
   const { updateReadMessage } = useUpdateRealtorMessage();
@@ -78,4 +78,4 @@ function RealtorsMessage(props: { message: IRealtorMessage; isLoading: boolean }
     </div>
   );
 }
-export default RealtorsMessage;
+export default RealtorMessage;

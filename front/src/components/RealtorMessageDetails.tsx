@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { ReactComponent as OpenEmailIcon } from '../../../assets/icon-mail-open.svg';
 import useFetchRealtorMessage from '../hooks/useFetchRealtorMessage.hook';
 
-function RealtorsMessageDetails(props: { isMobile: boolean }) {
+function RealtorMessageDetails(props: { isMobile: boolean }) {
   const navigate = useNavigate();
   const { realtorId, messageId } = useParams();
 
@@ -20,7 +20,9 @@ function RealtorsMessageDetails(props: { isMobile: boolean }) {
 
   if (isRealtorMessageLoading) {
     return (
-      <div className="flex flex-col bg-gray-100 w-3/4 p-8">
+      <div
+        className={`flex flex-col bg-gray-100 p-8 ${props.isMobile ? 'w-full' : 'w-3/4'}`}
+      >
         <div className="flex contact bg-white rounded w-full mb-6 p-6">
           <Facebook />
         </div>
@@ -74,4 +76,4 @@ function RealtorsMessageDetails(props: { isMobile: boolean }) {
     </div>
   );
 }
-export default RealtorsMessageDetails;
+export default RealtorMessageDetails;

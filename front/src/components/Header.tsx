@@ -28,10 +28,14 @@ const Header = () => {
   );
 
   return (
-    <div className="flex h-16 bg-white fixed top-0 left-0 right-0 items-center justify-between drop-shadow-lg px-6">
+    <div
+      data-testid="header"
+      className="flex h-16 bg-white fixed top-0 left-0 right-0 items-center justify-between drop-shadow-lg px-6"
+    >
       <AvivLogo />
       <div className="flex">
         <div
+          data-testid="unread-messages"
           className={`flex items-center h-8 py-2 px-3 rounded-md mx-8 ${
             realtor?.unread_messages ? 'bg-primary' : 'bg-gray-500'
           }`}
@@ -40,6 +44,7 @@ const Header = () => {
           <span className="ml-2 text-white"> {realtor?.unread_messages ?? 0} </span>
         </div>
         <select
+          data-testid="realtor-select"
           className="rounded"
           value={selectedRealtor}
           onChange={(e) => selectRealtor(e.target.value)}

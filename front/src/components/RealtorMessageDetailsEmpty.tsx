@@ -1,6 +1,6 @@
 import { ReactComponent as MailIcon } from '../../../assets/icon-mail.svg';
 
-function RealtorsMessageDetailsEmpty() {
+function RealtorMessageDetailsEmpty() {
   return (
     <div className="flex flex-col w-3/4 items-center justify-center -mt-10">
       <MailIcon className="w-16 h-16 text-gray-400" />
@@ -9,4 +9,4 @@ function RealtorsMessageDetailsEmpty() {
     </div>
   );
 }
-export default RealtorsMessageDetailsEmpty;
+export default RealtorMessageDetailsEmpty;

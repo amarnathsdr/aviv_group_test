@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom';
 import useFetchRealtorMessages from '../hooks/useFetchRealtorMessages.hook';
 import { IRealtorMessage } from '../types/realtors.type';
 
-import RealtorsMessage from './RealtorMessage';
+import RealtorMessage from './RealtorMessage';
 
-function RealtorsMessageList(props: { isMobile: boolean }) {
+function RealtorMessageList(props: { isMobile: boolean }) {
   const { realtorId } = useParams();
   const {
     realtorMessages,
@@ -28,6 +28,7 @@ function RealtorsMessageList(props: { isMobile: boolean }) {
 
   return (
     <div
+      data-testid="realtor-message-list"
       className={`flex flex-col h-full overflow-scroll ${
         props.isMobile ? 'w-full' : ' w-1/4'
       }`}
@@ -35,7 +36,8 @@ function RealtorsMessageList(props: { isMobile: boolean }) {
     >
       {realtorMessages?.pages?.map((page) =>
         page?.map((realtorMessage: IRealtorMessage) => (
-          <RealtorsMessage
+          <RealtorMessage
+            data-testid={'message' + realtorMessage.id}
             key={realtorMessage.id}
             message={realtorMessage}
             isLoading={areRealtorMessagesLoading}
@@ -45,4 +47,4 @@ function RealtorsMessageList(props: { isMobile: boolean }) {
     </div>
   );
 }
-export default RealtorsMessageList;
+export default RealtorMessageList;
