@@ -26,11 +26,13 @@ I will put better UI loader for a better UX.
 I will handle the language with i18n
 I will scope the folder by domains
 I will use component from a design system
+Even if i have never done it, i will deal accesibility 
+And finally cover the application with unit tests, functionnal tests, end to end tests and non regression tests
 ---
 ### Have you met issues that you left on the side to finish in time and how would you solve them?
 
 Answer:
 I will put way more test on every level of the application
-I will maybe handle better the responsive of the application
+I will maybe handle in a better way the responsive of the application
 
 
