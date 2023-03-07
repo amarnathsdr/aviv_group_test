@@ -1,6 +1,4 @@
 import { describe, test, expect } from 'vitest';
-import { waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import RealtorMessageList from './RealtorMessageList';
 import customRender from '../../test-utils';
 

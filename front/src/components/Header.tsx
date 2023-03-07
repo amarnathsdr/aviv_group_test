@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 import { ReactComponent as AvivLogo } from '../../../assets/logo-aviv.svg';
@@ -11,7 +11,7 @@ import useFetchRealtor from '../hooks/useFetchRealtor.hook';
 const Header = () => {
   const navigate = useNavigate();
   const { realtorId } = useParams();
-  const { realtors, areRealtorsLoading } = useFetchRealtors();
+  const { realtors } = useFetchRealtors();
   const [selectedRealtor, setSelectedRealtor] = useState(realtorId ?? '');
 
   const selectRealtor = (realtorId: string) => {
@@ -23,9 +23,7 @@ const Header = () => {
     selectRealtor(realtors?.[0].id.toString());
   }
 
-  const { realtor, isRealtorLoading } = useFetchRealtor(
-    realtorId ? parseInt(realtorId, 10) : undefined,
-  );
+  const { realtor } = useFetchRealtor(realtorId ? parseInt(realtorId, 10) : undefined);
 
   return (
     <div
